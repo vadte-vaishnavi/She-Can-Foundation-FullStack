@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>She Can Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo" aria-label="She Can Foundation home">
+        <span class="logo-mark">SC</span>
+        <span>She Can Foundation</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="btn btn-outline" id="openLogin">Login</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section reveal" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Student-led impact through digital skills</p>
+        <h1>Empowering Students Through Technology</h1>
+        <p class="hero-text">
+          She Can Foundation is a beginner-friendly NGO initiative helping students learn,
+          build confidence, and use technology to create meaningful community impact.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Send Message</a>
+          <a href="#messages" class="btn btn-glass">View Dashboard</a>
+        </div>
+      </div>
+
+      <div class="hero-panel glass-card">
+        <div class="stat-card">
+          <strong>1,200+</strong>
+          <span>Students Reached</span>
+        </div>
+        <div class="stat-card">
+          <strong>48</strong>
+          <span>Skill Sessions</span>
+        </div>
+        <div class="stat-card">
+          <strong>95%</strong>
+          <span>Beginner Friendly</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about reveal" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">About us</p>
+        <h2>Building confidence with practical learning</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card glass-card">
+          <span class="feature-icon">01</span>
+          <h3>Mentorship</h3>
+          <p>Guided sessions that help students understand technology concepts step by step.</p>
+        </article>
+        <article class="feature-card glass-card">
+          <span class="feature-icon">02</span>
+          <h3>Projects</h3>
+          <p>Hands-on activities that make portfolios stronger and learning more memorable.</p>
+        </article>
+        <article class="feature-card glass-card">
+          <span class="feature-icon">03</span>
+          <h3>Community</h3>
+          <p>A supportive space where students ask questions, share progress, and grow together.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-section reveal" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Contact</p>
+        <h2>Start a conversation with us</h2>
+        <p>
+          Have a question, collaboration idea, or student program request? Submit the form
+          and it will appear in the local admin dashboard.
+        </p>
+      </div>
+
+      <form class="contact-form glass-card" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name">
+          <small class="error-message"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+          <small class="error-message"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message"></textarea>
+          <small class="error-message"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-width">Submit Message</button>
+      </form>
+    </section>
+
+    <section class="section dashboard reveal" id="messages">
+      <div class="dashboard-header">
+        <div>
+          <p class="eyebrow">Admin panel</p>
+          <h2>Submitted Messages</h2>
+        </div>
+        <button class="btn btn-outline" id="clearMessages">Clear All</button>
+      </div>
+
+      <div class="messages-grid" id="messagesGrid">
+        <div class="empty-state">
+          <h3>No messages yet</h3>
+          <p>Submitted contact forms will appear here and stay after refresh.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <a href="#home" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>She Can Foundation</span>
+      </a>
+      <p>Supporting students with technology, mentorship, and real-world learning.</p>
+    </div>
+    <div class="social-links">
+      <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="Twitter">Twitter</a>
+    </div>
+    <p class="copyright">Copyright &copy; 2026 She Can Foundation. All rights reserved.</p>
+  </footer>
+
+  <div class="toast" id="successToast">Form Submitted Successfully</div>
+
+  <div class="modal-overlay" id="authModal" aria-hidden="true">
+    <div class="auth-modal glass-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-tab="login">Login</button>
+        <button class="tab-btn" data-tab="signup">Sign Up</button>
+      </div>
+
+      <form class="auth-form active" id="loginForm">
+        <h2 id="authTitle">Welcome back</h2>
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="student@example.com">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Login</button>
+      </form>
+
+      <form class="auth-form" id="signupForm">
+        <h2>Create account</h2>
+        <div class="form-group">
+          <label for="signupName">Full Name</label>
+          <input type="text" id="signupName" placeholder="Enter full name">
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" placeholder="student@example.com">
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" placeholder="Create password">
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
